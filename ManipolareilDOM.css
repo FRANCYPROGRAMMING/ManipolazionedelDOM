@@ -1,0 +1,12 @@
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task span {
+  margin-left: 5px;
+}

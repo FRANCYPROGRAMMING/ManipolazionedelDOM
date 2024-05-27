@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div>
+    <h1>To-do List</h1>
+    <input type="text" id="taskInput" placeholder="..." />
+    <button id="addButton">Aggiungi</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    document.getElementById('addButton').addEventListener('click', function() {
+      const taskInput = document.getElementById('taskInput');
+      const taskValue = taskInput.value.trim();
+
+      if (taskValue === '') {
+        alert('Per favore, inserisci un task.');
+        return;
+      }
+
+      const taskItem = document.createElement('li');
+      taskItem.classList.add('task');
+
+      const taskCheckbox = document.createElement('input');
+      taskCheckbox.type = 'checkbox';
+
+      const taskSpan = document.createElement('span');
+      taskSpan.textContent = taskValue;
+
+      taskItem.appendChild(taskCheckbox);
+      taskItem.appendChild(taskSpan);
+
+      const taskList = document.getElementById('taskList');
+      taskList.appendChild(taskItem);
+
+      taskInput.value = '';
+    });
+  </script>
+</body>
+</html>
